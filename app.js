@@ -1,11 +1,8 @@
 //SkyNet Initialization
-
 /**
  * Auto-generated code below aims at helping you parse
  * the standard input according to the problem statement.
  **/
-
-var flag = 0;
 
 function check(index, SI, nodesA, nodesB, gateway) {      
     var NSI = nodesA.indexOf(SI, index);
@@ -15,13 +12,10 @@ function check(index, SI, nodesA, nodesB, gateway) {
             print(nodesA[NSI] + " " + nodesB[NSI]);
             nodesA.splice(NSI, 1);
             nodesB.splice(NSI, 1);
-            flag = 1;
         }
         else 
             return (check((NSI+1), SI, nodesA, nodesB, gateway));
     }
-    else
-        flag = 0;   
 }
 
 var inputs = readline().split(' ');
@@ -49,9 +43,21 @@ while (true) {
  
     for(var k = 0; k < E; k++) {
         check(0, SI, nodes1, nodes2, gateways[k]);
-        
-        if(flag === 0)
-            check(0, SI, nodes2, nodes1, gateways[k]);      
+        check(0, SI, nodes2, nodes1, gateways[k]);      
     }
       
+    for(var j = 0; j < E; j++) {
+        if(nodes1.indexOf(gateways[j])!= -1) {
+            var x = nodes1.indexOf(gateways[j]);
+            print(nodes1[x] + " " + nodes2[x]);  
+            nodes1.splice(x, 1);
+            nodes2.splice(x, 1);
+        }
+        else if(nodes2.indexOf(gateways[j]) != -1) {
+            var x = nodes2.indexOf(gateways[j]);
+            print(nodes1[x] + " " + nodes2[x]); 
+            nodes1.splice(x, 1);
+            nodes2.splice(x, 1);
+        }
+    }
 }
