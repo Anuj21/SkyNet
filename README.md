@@ -1,7 +1,7 @@
-# SkyNet #
+﻿# SkyNet #
 
 ##Test List##
-- [ ] Test Simple
+- [x] Test Simple
 - [ ] Plusieurs chemins
 - [ ] L'étoile
 - [ ] La triple étoile
