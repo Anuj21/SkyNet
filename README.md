@@ -3,5 +3,5 @@
 ##Test List##
 - [x] Test Simple
 - [x] Plusieurs chemins
-- [ ] L'étoile
+- [x] L'étoile
 - [ ] La triple étoile
